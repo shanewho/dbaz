@@ -1,0 +1,56 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+sources:
+  - name: synsp
+    database: dev  
+    schema: synapse  
+    tables:
+      - name: test1
+  - name: marketo
+    schema: source_marketo
+    loader: ADLSblob
+    tables:
+      - name: ford_escorts
+        description: |
+          from raw DW.
+        external:
+          # Delimited Files in Blob/Lake
+          # External Data Source name (created prior)
+          data_source: bwshanecontainer1 # made with TYPE= 'HADOOP'
+          location: /bwshanecontainer1/ford_escort.csv # path on above data source
+          # External File Format name (created prior)
+          file_format: CommaDelimited 
+          reject_type: VALUE
+          reject_value: 0
+          ansi_nulls: true
+          quoted_identifier: true
+        columns:
+          - name: Year
+            description: Year
+            data_type: int
+          - name: Mileage (thousands)
+            description: Mileage
+            data_type: int
+          - name: Price
+            description: the price
+            data_type: varchar(255)
+
