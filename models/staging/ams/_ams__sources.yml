@@ -1,0 +1,74 @@
+version: 2
+
+sources:
+  - name: lake_ams
+    schema: raw
+    tables:
+      - name: ams__customers
+        description: AMS
+        external:
+          data_source: AzureDataLakeStorage
+          location: /ams_customers/
+          file_format: CSV_COMMA_WITH_HEADER 
+        columns:
+          - name: customerID
+            data_type: varchar(255)
+          - name: companyName
+            data_type: varchar(255)
+          - name: contactName
+            data_type: varchar(255)
+          - name: contactTitle
+            data_type: varchar(255)
+          - name: address
+            data_type: varchar(255)
+          - name: city
+            data_type: varchar(255)
+          - name: region
+            data_type: varchar(255)
+          - name: postalCode
+            data_type: varchar(255)
+          - name: country
+            data_type: varchar(255)
+          - name: phone
+            data_type: varchar(255)
+          - name: fax
+            data_type: varchar(250)
+          - name: unused_empty1
+            data_type: varchar(250)
+      - name: ams__policies
+        description: AMS
+        external:
+          data_source: AzureDataLakeStorage
+          location: /ams_policies/
+          file_format: CSV_COMMA_WITH_HEADER 
+        columns:
+          - name: orderID
+            data_type: varchar(255)
+          - name: customerID
+            data_type: varchar(255)
+          - name: employeeID
+            data_type: varchar(255)
+          - name: orderDate
+            data_type: varchar(255)
+          - name: requiredDate
+            data_type: varchar(255)
+          - name: shippedDate
+            data_type: varchar(255)
+          - name: shipVia
+            data_type: varchar(255)
+          - name: freight
+            data_type: varchar(255)
+          - name: shipName
+            data_type: varchar(255)
+          - name: shipAddress
+            data_type: varchar(255)
+          - name: shipCity
+            data_type: varchar(255)
+          - name: shipRegion
+            data_type: varchar(255)
+          - name: shipPostalCode
+            data_type: varchar(255)
+          - name: shipCountry
+            data_type: varchar(255)
+          - name: otherCountry
+            data_type: varchar(255)

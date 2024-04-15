@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: lake_dataverse
+    schema: raw
+    tables:
+      - name: dataverse__accounts
+        description: AMS
+        external:
+          data_source: AzureDataLakeStorage
+          location: /dataverse_accounts/
+          file_format: CSV_COMMA_WITH_HEADER 
+        columns:
+          - name: customerID
+            data_type: varchar(255)
+          - name: name
+            data_type: varchar(255)
+          - name: contactTitle
+            data_type: varchar(255)
+          - name: address
+            data_type: varchar(255)
+          - name: city
+            data_type: varchar(255)
+          - name: postalCode
+            data_type: varchar(255)
+          - name: country
+            data_type: varchar(255)
+          - name: phone
+            data_type: varchar(255)

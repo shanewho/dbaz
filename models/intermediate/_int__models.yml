@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int__accounts_joint_to_customers
+    description: "All customers and prospects"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
