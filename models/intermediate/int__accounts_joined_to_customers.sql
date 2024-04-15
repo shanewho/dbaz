@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 --query is prob wrong, just an example
 with
 accounts as (

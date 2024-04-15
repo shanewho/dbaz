@@ -20,9 +20,13 @@ models:
   bw_lake:
     gold:
       schema: gold
+      materialized: table
     silver:
       schema: silver
+      materialized: table
     staging:
       schema: raw
+      materialized: view
     intermediate:
       schema: raw
+      materialized: view

@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 --using a sample orders.csv to pretend to be policies
 
 with source_data as (
