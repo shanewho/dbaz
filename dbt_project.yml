@@ -24,9 +24,9 @@ models:
     silver:
       schema: silver
       materialized: table
-    staging:
+    intermediate:
       schema: raw
       materialized: view
-    intermediate:
+    staging:
       schema: raw
       materialized: view

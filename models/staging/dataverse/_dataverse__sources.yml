@@ -27,3 +27,40 @@ sources:
             data_type: varchar(255)
           - name: phone
             data_type: varchar(255)
+      - name: dataverse__sales
+        description: AMS
+        external:
+          data_source: AzureDataLakeStorage
+          location: /sales/
+          file_format: CSV_COMMA_WITH_HEADER 
+        columns:
+          - name: customerID
+            data_type: varchar(255)
+          - name: Region	
+            data_type: varchar(255)
+          - name: Country	
+            data_type: varchar(255)
+          - name: ItemType	
+            data_type: varchar(255)
+          - name: SalesChannel	
+            data_type: varchar(255)
+          - name: OrderPriority	
+            data_type: varchar(255)
+          - name: OrderDate	
+            data_type: varchar(255)
+          - name: OrderID	
+            data_type: varchar(255)
+          - name: ShipDate	
+            data_type: varchar(255)
+          - name: UnitsSold	
+            data_type: varchar(255)
+          - name: UnitPrice	
+            data_type: varchar(255)
+          - name: UnitCost	
+            data_type: varchar(255)
+          - name: TotalRevenue	
+            data_type: varchar(255)
+          - name: TotalCost	
+            data_type: varchar(255)
+          - name: TotalProfit
+            data_type: varchar(255)
