@@ -1,6 +1,4 @@
-Welcome to your new dbt project!
-
-### Using the starter project
+### Using the project
 
 Try running the following commands:
 - dbt run
@@ -17,9 +15,5 @@ dbt run-operation stage_external_sources
 dbt run-operation stage_external_sources --vars "ext_full_refresh: true"
 ```
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Details
+This is a POC that can use our Azure Synapse with DBT. It makes use of dbt-external-tables package to manage (create/update) external tables in Azure Synapse Dedicated SQL Pool. Then DBT can map to those external tables easily to work like normal. The external tables query the Azure Data Lake Storage Gen 2 and then the materialized models and views are created using the typical DBT flow. The end result has the final transformed data materialized as tables in the Dedicated SQL instance.
