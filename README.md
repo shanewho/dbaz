@@ -1,3 +1,7 @@
+```
+This sample requires dbt-synapse==1.7.2
+```
+
 ### Using the project
 
 Try running the following commands:
